@@ -14,11 +14,9 @@ makeCacheMatrix <- function(cachedMatrix = matrix()) {
   cachedInverse <- NULL
   
   setMatrix <- function(newMatrix) {
-    message("trying to set ")
     ## We only need to change the inverse if the matrix has changed.
     ## If old and new matrices are identical, keep the computed inverse as it is
     if(identical(newMatrix, cachedMatrix) == FALSE){
-      message("Storing a new matrix")
       cachedMatrix <<- newMatrix
       cachedInverse <<- NULL
     }
