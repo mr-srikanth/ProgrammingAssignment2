@@ -7,7 +7,7 @@
 
 ## This method creates a cached version of our matrix. 
 ## input: x is a matrix
-## output: 'cached Matrix' object, that allows cached computations on matrix
+## output: list of methods of our special object that allow us to perform cached operations
 
 makeCacheMatrix <- function(cachedMatrix = matrix()) {
   # This variable holds the computed (cached) inverse
@@ -44,6 +44,7 @@ makeCacheMatrix <- function(cachedMatrix = matrix()) {
 ## 1. It computes the inverse if the inverse was not already computed
 ## 2. It returns cached Inverse result, if it was computed already.
 ## Input: x is a cached matrix object, created by using 'makeCacheMatrix' method
+## Output: inverse of the input matrix
 cacheSolve <- function(x, ...) {
   result <- x$getInverse()
   if(!is.null(result)){
